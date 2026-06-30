@@ -20,5 +20,5 @@ spec:
               number: 8080
   tls:
   - hosts:
-    - nginx.bekme.com
+    - nginx.bekmee.com
     secretName: nginx-cert-secret
