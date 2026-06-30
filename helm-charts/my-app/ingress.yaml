@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: nginx.bekmee.com
+  - host: my.nginx.com
     http:
       paths:
       - path: /
@@ -20,5 +20,5 @@ spec:
               number: 8080
   tls:
   - hosts:
-    - nginx.bekmee.com
+    - my.nginx.com
     secretName: nginx-cert-secret
