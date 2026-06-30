@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: myapp
+  #annotations:
+  #  cert-manager.io/cluster-issuer: letsencrypt-issuer-dns-do
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: nginx.bekme.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx-service
+            port:
+              number: 8080
+  tls:
+  - hosts:
+    - nginx.bekme.com
+    secretName: nginx-cert-secret
